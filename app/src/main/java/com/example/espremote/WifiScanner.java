@@ -38,18 +38,34 @@ public class WifiScanner {
 
     public void scan() {
         boolean success = wifiManager.startScan();
+        System.out.println("scan done");
         if (!success) {
             scanFailure();
         }
     }
 
     private void scanSuccess() {
+        System.out.println("scan success");
         List<ScanResult> scanResults = wifiManager.getScanResults();
+        printScanResult(scanResults);
         dataModel.getAPList().setValue(scanResults);
     }
 
     private void scanFailure() {
+        System.out.println("scan failed");
         List<ScanResult> scanResults = wifiManager.getScanResults();
+        printScanResult(scanResults);
         dataModel.getAPList().setValue(scanResults);
+    }
+
+    private void printScanResult(List<ScanResult> scanResults) {
+        if (scanResults.size() > 0) {
+            for (ScanResult scanResult : scanResults) {
+                System.out.println(scanResult.SSID);
+            }
+        } else {
+            System.out.println("No result");
+        }
+
     }
 }

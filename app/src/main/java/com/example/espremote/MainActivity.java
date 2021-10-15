@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .setReorderingAllowed(true)
-                    .replace(R.id.fragment_device, FragmentDevice.newInstance())
+                    .replace(R.id.fragment_container, FragmentDevice.newInstance())
                     .commit();
         }
 
