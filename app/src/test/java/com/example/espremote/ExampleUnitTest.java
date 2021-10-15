@@ -1,4 +1,4 @@
-package com.example.espremoten;
+package com.example.espremote;
 
 import org.junit.Test;
 

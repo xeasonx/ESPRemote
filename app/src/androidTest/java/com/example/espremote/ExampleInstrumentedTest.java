@@ -1,4 +1,4 @@
-package com.example.espremoten;
+package com.example.espremote;
 
 import android.content.Context;
 
